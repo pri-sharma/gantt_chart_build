@@ -3630,23 +3630,7 @@ function mapEndArray(arr) {
 
   return result;
 }
-function onFilterDropDown(selectedProgram, selectedRegion, selectedResource) {
-  program_consolidation_view = program_consolidation_view.data.filter(
-    o1 => selectedProgram.some(o2 => o2 == o1.program_id) &&
-      selectedResource.some(o4 => o4 == o1.resource_id)
-  );
-  if (selectedviewType == 'program_consolidation_view') {
-    tasks = program_consolidation_view
-  } else if (selectedviewType == 'region_consolidation_view') {
-    tasks = region_consolidation_view
-  } else if (selectedviewType == 'resource_consolidation_view') {
 
-    tasks = resource_consolidation_view
-  }
-
-  //tasks = resource_consolidation_view
-  applyFilterOnToggleView(tasks);
-}
 function createGanttChart(csvData, IsApplyFilter) {
   var options = { month: '2-digit', day: '2-digit', year: 'numeric' };
   program_consolidation_view = []

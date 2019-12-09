@@ -334,7 +334,6 @@ var AppComponent = /** @class */ (function () {
         this.searchexcelRoadMapdata = this.excelRoadMapdata.filter(function (o1) { return _this.selectedProgram.some(function (o2) { return o2 == o1.program_name; }) &&
             _this.selectedRegion.some(function (o3) { return o3 == o1.region_name; }) &&
             _this.selectedResource.some(function (o4) { return o4 == o1.resource_name; }); });
-        // onFilterDropDown(this.selectedProgram,this.selectedRegion,this.selectedResource);
         createGanttChart(this.searchexcelRoadMapdata, false);
     };
     AppComponent.prototype.bindDropDown = function () {
