@@ -61,10 +61,14 @@ var MasterService = /** @class */ (function () {
         return this.http.get("./assets/apiurl.json", { headers: finalheaders });
         // .catch(this.handleError);
     };
+    MasterService.prototype.getApiUrl = function () {
+        this.webApiUrl = localStorage.getItem('apiurl');
+    };
     MasterService.prototype.getRoadMapData = function (filename) {
         //Create header object
         var headers = new http_1.HttpHeaders();
         //Mention http header details
+        this.getApiUrl();
         var finalheaders = headers.append('Content-Type', 'application/json');
         finalheaders.append("Access-Control-Allow-Origin", "true");
         //Call the get function
@@ -73,6 +77,7 @@ var MasterService = /** @class */ (function () {
     MasterService.prototype.uploadSharePointFile = function () {
         //Create header object
         var headers = new http_1.HttpHeaders();
+        this.getApiUrl();
         //Mention http header details
         var finalheaders = headers.append('Content-Type', 'application/json');
         finalheaders.append("Access-Control-Allow-Origin", "true");
