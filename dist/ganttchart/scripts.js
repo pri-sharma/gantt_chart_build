@@ -3272,6 +3272,7 @@ otisApp.controller('OtisCtrl', ['$scope', function ($scope) {
 });
 console.log(window.location.host)
 var date = new Date();
+
 var appurl = window.location.host
 var FolderPath = ""
 var ArchiveFolderPath = "";
@@ -3426,6 +3427,13 @@ gantt.config.columns = [
   { name: "F_End_Date", label: "End Date", align: "center" }
 ];
 gantt.config.min_column_width = 30; 
+gantt.attachEvent("onTaskClick", function(){
+  setTimeout((function() {
+    gantt.showDate(date);
+}), 5);
+gantt.showDate(date);
+return true;
+});
 function applyFilterOnToggleView(tasks) {
   gantt.clearAll();
   gantt.parse(tasks);
